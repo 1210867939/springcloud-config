@@ -4,12 +4,12 @@ spring:
       - dev
       
 ---
-
 server:
   port: 8201
 spring:
   profiles: dev
-  application: springcloud-config-client
+  application: 
+    name: springcloud-config-client
 eureka:
   instance:
     #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
@@ -30,7 +30,8 @@ server:
   port: 8202
 spring:
   profiles: dev
-  application: springcloud-config-client
+  application:
+    name: springcloud-config-client
 eureka:
   instance:
     #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
