@@ -1,0 +1,19 @@
+#保存格式一定要为utf-8
+
+spring:
+  profiles:
+    active:
+    - dev
+---  
+#开发环境
+spring:
+  profiles: dev
+  application:
+    name: springcloud-dev
+
+---  
+#测试环境
+spring:
+  profiles: test
+  application:
+    name: springcloud-test
