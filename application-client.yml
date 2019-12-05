@@ -16,7 +16,7 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
     #重命名，自定义服务名称信息
-    instance-id: springcloud-config-client
+    instance-id: springcloud-config-client-dev
     #访问路径可以显示IP地址
     prefer-ip-address: true
   client:
@@ -37,11 +37,11 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
     #重命名，自定义服务名称信息
-    instance-id: springcloud-config-client
+    instance-id: springcloud-config-client-test
     #访问路径可以显示IP地址
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://eureka-test6.com:7001/eureka/
+      defaultZone: http://eureka-test.com:7001/eureka/
     registry-fetch-interval-seconds: 30
     
