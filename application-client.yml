@@ -24,12 +24,11 @@ eureka:
       defaultZone: http://eureka-dev.com:7001/eureka/
     registry-fetch-interval-seconds: 30
  
- ---
- 
+---
 server:
   port: 8202
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: springcloud-config-client
 eureka:
@@ -46,4 +45,3 @@ eureka:
       defaultZone: http://eureka-test6.com:7001/eureka/
     registry-fetch-interval-seconds: 30
     
- ---
