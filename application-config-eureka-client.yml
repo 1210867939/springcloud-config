@@ -9,17 +9,11 @@ server:
   port: 7001
 spring:
   profiles: dev
-  application: 
-    name: springcloud-config-eureka-client
 eureka:
+  server:
+   #禁掉eureka服务器的自我保护机制，推荐默认的true，不要禁掉
+    enable-self-preservation: true
   instance:
-    #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 20
-    #重命名，自定义服务名称信息
-    instance-id: springcloud-config-client-dev
-    #访问路径可以显示IP地址
-    prefer-ip-address: true
     hostname: eureka7001.com
   client:
     #表示自己不注册到服务中心
@@ -27,29 +21,23 @@ eureka:
     fetchRegistry: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
-    registry-fetch-interval-seconds: 30
  
 ---
 server:
+  #注册中心的端口号
   port: 7001
 spring:
   profiles: test
-  application:
-    name: springcloud-config-eureka-client
 eureka:
+  server:
+   #禁掉eureka服务器的自我保护机制，推荐默认的true，不要禁掉
+    enable-self-preservation: true
   instance:
-    #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 20
-    #重命名，自定义服务名称信息
-    instance-id: springcloud-config-client-test
-    #访问路径可以显示IP地址
-    prefer-ip-address: true
+    hostname: eureka7001.com
   client:
-   #表示自己不注册到服务中心
+    #表示自己不注册到服务中心
     registerWithEureka: false
     fetchRegistry: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
-    registry-fetch-interval-seconds: 30
     
